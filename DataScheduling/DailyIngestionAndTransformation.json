@@ -1,0 +1,17 @@
+{
+    "name": "DailyIngestionAndTransformation",
+    "type": "NewOrExisting",
+    "typeProperties": {
+      "pipeline": {
+        "referenceName": "<pipelineName>",
+        "type": "PipelineReference"
+      },
+      "recurrence": {
+        "frequency": "Day",
+        "interval": 1,
+        "startTime": "2023-01-01T00:00:00Z",
+        "timeZone": "UTC"
+      }
+    }
+  }
+  

@@ -1,0 +1,23 @@
+{
+    "name": "LoadData",
+    "type": "SqlServerStoredProcedure",
+    "dependsOn": [
+        {
+            "activity": "<previousActivity>",
+            "dependencyConditions": [
+                "Succeeded"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "referenceName": "<transformedDataSet>",
+            "type": "DatasetReference"
+        }
+    ],
+    "storedProcedureName": "<storedProcedureName>",
+    "storedProcedureParameters": {
+        "<parameter1>": "<value1>",
+        "<parameter2>": "<value2>"
+    }
+}

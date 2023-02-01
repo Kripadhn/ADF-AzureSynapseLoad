@@ -1,0 +1,29 @@
+{
+    "name": "CopyData",
+    "type": "Copy",
+    "inputs": [
+      {
+        "referenceName": "SourceDataset",
+        "type": "DatasetReference"
+      }
+    ],
+    "outputs": [
+      {
+        "referenceName": "DestinationDataset",
+        "type": "DatasetReference"
+      }
+    ],
+    "source": {
+      "type": "SqlSource",
+      "sqlReaderQuery": "SELECT * FROM [dbo].[SourceTable]"
+    },
+    "sink": {
+      "type": "SqlSink",
+      "writeBatchSize": 0,
+      "writeBatchTimeout": "00:00:00",
+      "allowPolyBase": false,
+      "sqlWriterStoredProcedureName": null,
+      "sqlWriterTableType": null
+    }
+  }
+  

@@ -1,0 +1,40 @@
+{
+    "name": "IntegrateData",
+    "type": "Copy",
+    "inputs": [
+        {
+            "referenceName": "<blobDataSetName>",
+            "type": "DatasetReference"
+        },
+        {
+            "referenceName": "<sqlDataSetName>",
+            "type": "DatasetReference"
+        }
+    ],
+    "outputs": [
+        {
+            "referenceName": "<synapseTableName>",
+            "type": "DatasetReference",
+            "parameters": {
+                "tableName": "<synapseTableName>"
+            }
+        }
+    ],
+    "copyBehavior": "Merge",
+    "source": [
+        {
+            "type": "DatasetReference",
+            "referenceName": "<blobDataSetName>"
+        },
+        {
+            "type": "DatasetReference",
+            "referenceName": "<sqlDataSetName>"
+        }
+    ],
+    "sink": {
+        "type": "SqlSink",
+        "writeBatchSize": 100000,
+        "writeBatchTimeout": "00:01:00",
+        "sqlWriterStoredProcedureName": "usp_InsertOrMerge"
+    }
+}

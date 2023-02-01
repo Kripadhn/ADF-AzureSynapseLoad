@@ -1,0 +1,24 @@
+{
+    "name": "TransformData",
+    "type": "SqlServerStoredProcedure",
+    "inputs": [
+        {
+            "referenceName": "<dataSetName>",
+            "type": "DatasetReference"
+        }
+    ],
+    "outputs": [
+        {
+            "referenceName": "<synapseTableName>",
+            "type": "DatasetReference",
+            "parameters": {
+                "tableName": "<synapseTableName>"
+            }
+        }
+    ],
+    "storedProcedureName": "<storedProcedureName>",
+    "storedProcedureParameters": {
+        "<parameter1>": "<value1>",
+        "<parameter2>": "<value2>"
+    }
+}

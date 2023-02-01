@@ -1,0 +1,7 @@
+Go to the Azure portal, and navigate to the Azure Data Factory that contains the pipeline.
+Click on the pipeline to open its details.
+Click on the Alerts tab, and then click the + New Alert button.
+Enter a name for the alert, select the Failed state, and select the email notification type.
+Enter the email addresses of the recipients, and click Save.
+----------------
+

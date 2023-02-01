@@ -1,0 +1,46 @@
+{
+    "name": "LoadTransformedData",
+    "type": "Copy",
+    "inputs": [
+        {
+            "referenceName": "<dataSetName>",
+            "type": "DatasetReference"
+        }
+    ],
+    "outputs": [
+        {
+            "referenceName": "<synapseTableName>",
+            "type": "DatasetReference",
+            "parameters": {
+                "tableName": "<synapseTableName>"
+            }
+        }
+    ],
+    "copyBehavior": "Overwrite",
+    "source": {
+        "type": "DatasetReference",
+        "referenceName": "<dataSetName>"
+    },
+    "sink": {
+        "type": "SqlSink",
+        "writeBatchSize": 100000,
+        "writeBatchTimeout": "00:01:00",
+        "sqlWriterStoredProcedureName": "usp_InsertOrMerge"
+    },
+    "transformer": {
+        "type": "DerivedColumnTransformer",
+        "columnMappings": [
+            {
+                "inputColumn": "<inputColumnName1>",
+                "outputColumn": "<outputColumnName1>",
+                "expression": "UPPER(<inputColumnName1>)"
+            },
+            {
+                "inputColumn": "<inputColumnName2>",
+                "outputColumn": "<outputColumnName2>",
+                "expression": "LOWER(<inputColumnName2>)"
+            }
+        ]
+    }
+}
+

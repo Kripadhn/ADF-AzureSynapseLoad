@@ -1,0 +1,32 @@
+"activities": [
+    {
+        "name": "CopyData",
+        "type": "Copy",
+        "inputs": [
+            {
+                "referenceName": "<inputDatasetName>",
+                "type": "DatasetReference"
+            }
+        ],
+        "outputs": [
+            {
+                "referenceName": "<outputDatasetName>",
+                "type": "DatasetReference"
+            }
+        ],
+        "policy": {
+            "timeout": "7.00:00:00",
+            "retry": 0,
+            "retryIntervalInSeconds": 30
+        }
+    }
+],
+"annotations": [
+    {
+        "name": "Monitoring",
+        "type": "Monitoring",
+        "typeProperties": {
+            "enabled": true
+        }
+    }
+]

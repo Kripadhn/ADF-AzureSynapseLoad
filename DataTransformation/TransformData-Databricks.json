@@ -1,0 +1,32 @@
+{
+    "name": "TransformData",
+    "type": "DatabricksNotebook",
+    "dependsOn": [
+        {
+            "activity": "<previousActivity>",
+            "dependencyConditions": [
+                "Succeeded"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "referenceName": "<dataSetName>",
+            "type": "DatasetReference"
+        }
+    ],
+    "outputs": [
+        {
+            "referenceName": "<synapseTableName>",
+            "type": "DatasetReference",
+            "parameters": {
+                "tableName": "<synapseTableName>"
+            }
+        }
+    ],
+    "notebookPath": "<notebookPath>",
+    "baseParameters": {
+        "<parameter1>": "<value1>",
+        "<parameter2>": "<value2>"
+    }
+}

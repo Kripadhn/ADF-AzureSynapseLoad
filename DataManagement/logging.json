@@ -1,0 +1,14 @@
+{
+    "name": "logging",
+    "type": "Microsoft.DataFactory/factories/loggingSettings",
+    "apiVersion": "2018-06-01",
+    "location": "[resourceGroup().location]",
+    "properties": {
+      "diagnostics": {
+        "logLevel": "Information",
+        "sendToDiagnosticLog": true,
+        "storageAccountId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Storage/storageAccounts/', <storageAccountName>)]"
+      }
+    }
+  }
+  

@@ -1,0 +1,41 @@
+{
+    "name": "LoadIntegratedData",
+    "type": "Copy",
+    "inputs": [
+        {
+            "referenceName": "<sourceDataSet1Name>",
+            "type": "DatasetReference"
+        },
+        {
+            "referenceName": "<sourceDataSet2Name>",
+            "type": "DatasetReference"
+        }
+    ],
+    "outputs": [
+        {
+            "referenceName": "<synapseTableName>",
+            "type": "DatasetReference",
+            "parameters": {
+                "tableName": "<synapseTableName>"
+            }
+        }
+    ],
+    "copyBehavior": "Overwrite",
+    "source": {
+        "type": "UnionAllSource",
+        "sources": [
+            {
+                "referenceName": "<sourceDataSet1Name>"
+            },
+            {
+                "referenceName": "<sourceDataSet2Name>"
+            }
+        ]
+    },
+    "sink": {
+        "type": "SqlSink",
+        "writeBatchSize": 100000,
+        "writeBatchTimeout": "00:01:00",
+        "sqlWriterStoredProcedureName": "usp_InsertOrMerge"
+    }
+}
